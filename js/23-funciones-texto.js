@@ -1,7 +1,7 @@
 
 //Transformacion de textos
 var numero = 444;
-var texto1 = "Bienvenido al curso de javaScript de Victor Robles";
+var texto1 = " Bienvenido al curso de javaScript de Victor Robles";
 var texto2 = "es muy buen curso";
 
 var dato = numero.toString();//metodo que pasa el dato a string
@@ -47,7 +47,11 @@ busqueda = texto1.includes("Victor Robles");//si encuentra en el string lo indic
 console.log(busqueda);
 
 /*****************************/
-//funciones de reemplazo
+//funciones de reemplazo, metodos de reemplazo en variables string
 
-busqueda = texto1.replace("javaScript", "Synfony");//reemplaza el primer texto parametro, por el segundo texto parametro
+//busqueda = texto1.replace("javaScript", "Synfony");//reemplaza el primer texto parametro, por el segundo texto parametro
+//busqueda = texto1.slice(14,24);//indicamos desde y hasta donde queremos que recorte la frase string
+//busqueda = texto1.split();//devuelve la frase en forma de array 
+//busqueda = texto1.split(" ");//así indicamos que cada palabra se separe por el espaciado indicado entre comillas
+busqueda = texto1.trim();//nos elimina los "espacio" que haya al comienzo y final del string 
 console.log(busqueda);
