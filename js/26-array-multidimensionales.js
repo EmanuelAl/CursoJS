@@ -1,14 +1,14 @@
 
 //array multidimensionales son arrays dentro de otro array
 //dentro de un array se puede meter cualquier tipo de dato
-var categorias = ["Acción", "Terror","Comedia"];
+var categorias = ["Acción", "Terror","Comedia","Misterio", "Drama","Aventura"];
 var peliculas = ["Los vengadores","Hulk","2012"];
 //array multidimencional
 var cine =  [categorias, peliculas];
 
 console.log(cine);
 console.log(cine[0][1]);
-console.log(cine[1][2]);
+console.log(cine[1][1]);
 
 /************************************/
 //operaciones con arrays
@@ -46,3 +46,19 @@ var cadena = "texto1, texto2, texto3";
 var cadena_array = cadena.split(", ");
 
 console.log(cadena_array);
+
+
+/*******************************************/
+// ORDENAR ARRAYS:
+
+categorias.sort();//ordena alfabeticamente(a-z) y por nro (de menor a mayor)
+
+
+var numeros = [1, 2 ,7 ,4, 76, 100, 89,2,3 , 102];//ordena bien cuando los elementos tienen la misma cantidad de cifras 
+numeros.sort();
+
+console.log(categorias);
+console.log(numeros);
+
+categorias.reverse();//los ordena a la inversa de la Z-A
+console.log(categorias);

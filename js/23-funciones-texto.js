@@ -47,7 +47,7 @@ busqueda = texto1.includes("Victor Robles");//si encuentra en el string lo indic
 console.log(busqueda);
 
 /*****************************/
-//funciones de reemplazo, metodos de reemplazo en variables string
+//funciones/metodos de reemplazo, metodos de reemplazo en variables string
 
 //busqueda = texto1.replace("javaScript", "Synfony");//reemplaza el primer texto parametro, por el segundo texto parametro
 //busqueda = texto1.slice(14,24);//indicamos desde y hasta donde queremos que recorte la frase string

@@ -42,3 +42,48 @@ lenguajes.forEach((elemento, indice, array)=>{//el 2do y 3ro parametros son opci
 	document.write(`<li> ${indice} ${elemento}</li>`);
 });//conclusion el forEach nos itera/recorre todo el array es mas facil que usar un for
 
+/*******************************************/
+//Otras formas de recorrer el array
+
+for(elemento in nombres){//se crea dentro del for, la variable 'elemento', que tomara el valor del indice/posicion de cada elemento del array
+
+	console.log(nombres[elemento]);//asi accedemos al valor 
+}
+
+// segunda manera :
+
+for(elemento of nombres){//en este caso la variable 'elemento' toma directamente el valor del indice recorrido, TOMA EL VALOR
+
+	console.log(elemento);//toma el valor de cada elemento del array
+}
+/****************************************/
+/************************************///
+//Busquedas
+/*
+var busquedas = lenguajes.find(function(lenguaje){
+	return lenguaje == "PHP";
+});
+
+// El método find ejecuta la función callback una vez por cada índice del array hasta que encuentre uno en el que el callback 
+// devuelva un valor verdadero. Si es así, find devuelve inmediatamente el valor del elemento. 
+// En caso contrario, find devuelve undefined .
+*/
+//manera mas resumida:
+ var busquedas = lenguajes.find(lenguaje => lenguaje == "PHP");
+//de esta manera podemos saber si un elemento existe o no dentro de un array
+console.log(busquedas);
+
+//lo siguiente encuentra el indice del elemento y devuelve eso
+busquedas = lenguajes.findIndex(lenguaje => lenguaje == "Js");
+console.log(busquedas);
+
+
+
+var precios =  [10, 20, 50, 80, 12];
+
+busquedas = precios.some(precio => precio >= 20);// devuelve true si hay algun elemento que al menos cumpla la condicion del callback
+console.log(busquedas);
+// some()ejecuta la función callback una vez por cada elemento presente en el arreglo hasta que encuentre uno donde callback
+// regrese un valor verdadero (true). Si se encuentra dicho elemento, some() retornar true inmediatamente. 
+// Si no, some() regresa false. callback es invocada sólo para los índices del array que tienen valores asignados; 
+// no es invocada para índices que han sido borrados oa los que nunca se les han asignado valores.
