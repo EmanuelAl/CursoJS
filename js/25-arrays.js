@@ -76,7 +76,11 @@ console.log(busquedas);
 //lo siguiente encuentra el indice del elemento y devuelve eso
 busquedas = lenguajes.findIndex(lenguaje => lenguaje == "Js");
 console.log(busquedas);
+// El método findIndex() ejecuta la función de callback una vez por cada índice del array hasta que 
+// encuentre uno donde callback devuelva un valor verdadero (eso es, un valor que fuerza un true).
 
+// Si dicho elemento es encontrado, findIndex() inmediatamente devuelve el índice del elemento.
+// Si la función callback nunca devuelve un valor verdadero (o el tamaño del array es 0), findIndex devuelve -1.
 
 
 var precios =  [10, 20, 50, 80, 12];
