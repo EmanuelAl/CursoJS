@@ -17,6 +17,7 @@
 
 let div_usuarios = document.querySelector(".usuarios");
 let div_janet = document.querySelector("#janet");
+let div_profesor = document.querySelector("#profesor");
 let usuarios = [];
 
 
@@ -30,14 +31,24 @@ let usuarios = [];
 			listadoUsuarios(usuarios);
 			
 			// cuando se hayan listado los usuarios en pantalla
-			// devuelve la llamada a getJanet() para mostrar
-			// ese usuario en particular
-			 return getJanet();//devuelve una promesa
+			// devuelve la llamada a getInfo() para mostrar
+			// el contenido de la promesa que creamos
+			 return getInfo();//devuelve una promesa
 			// entonces podemos encadenar otro metodo then
-			// para trabajar con la promesa getJanet() ya que 
+			// para trabajar con lo que contiene getInfo() ya que 
 			// es eso lo que devolvera el getUsuarios()
+
+		}).then(data => {
+			console.log(data);//muestra el json string
+
+
+			div_profesor.innerHTML = data;
+
+			return getJanet();//devuelve una promesa
+
 		}).then(data => data.json())
 		.then(janet =>{
+				console.log(janet);
 
 			// como en esta parte nos devuelve esto:
 			// 				{
@@ -56,6 +67,13 @@ let usuarios = [];
 			// tenemos que acceder a "data", entonces:
 
 				mostrarJanet(janet.data);
+		}).catch(error => {//.catch() captura/devuelve el error
+			console.log(error+" error en las peticiones");
+			// nos daria error en casos como:
+			// la url de la promesa esta mal escrita
+			// cuando el servidor esta caido
+			// cuando no tengamos conexion de internet
+			// cuando no nos devuelva nada la peticion
 		});
 
 /*	//dentro de la promesa tenemos el metodo then
@@ -111,4 +129,24 @@ function mostrarJanet(user){
 
 function getInfo(){
 
+	var profesor = {
+		nombre: "Victor",
+		apellido: "Robles",
+		url: 'https://victorroblesweb.es'
+	};
+	// se crea un objeto de promesa
+return new Promise((resolve, reject) => {
+    let profesor_string = "";
+	// agregamos un retardo de 3 segundos
+	setTimeout(function(){
+
+		profesor_string = JSON.stringify(profesor); //lo convertimos a un json string
+		if(typeof profesor_string != 'string' || profesor_string == '') return reject('error 1');
+
+		return resolve(profesor_string);
+	}, 3000);
+
+	
+	
+	});	
 }
