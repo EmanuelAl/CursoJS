@@ -18,3 +18,9 @@ let textoHora =`
 `;
 console.log(fecha);
 console.log(textoHora);
+
+// funciones matematicas 
+// hay muchas , investigar funcion Math en javascript
+console.log(Math.ceil(Math.random()*10000));
+//Math.ceil() devuelve el entero mas cercano del decimal
+//Math.random() devuelve un nro flotante aleatorio
